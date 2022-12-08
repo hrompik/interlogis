@@ -20,16 +20,16 @@ class Goods
     public function validate(): bool
     {
         $error = '';
-        if (empty($sourceKladr)) {
+        if (empty($this->_sourceKladr)) {
             $error .= 'Не ввели Склад отправления<br>' . PHP_EOL;
         }
-        if (empty($targetKladr)) {
+        if (empty($this->_targetKladr)) {
             $error .= 'Не ввели Склад Получения<br>' . PHP_EOL;
         }
-        if (empty($weight)) {
+        if (empty($this->_weight)) {
             $error .= 'Не ввели вес<br>' . PHP_EOL;
         }
-        if (empty($error)) {
+        if (strlen($error) > 0) {
             $this->_error = $error;
             return false;
         }
